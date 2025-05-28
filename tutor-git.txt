@@ -1,0 +1,2 @@
+ada beberapa status:
+1. untracked (U) = file tersebut belum ditrack oleh git
