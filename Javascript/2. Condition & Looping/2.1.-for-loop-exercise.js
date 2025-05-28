@@ -38,3 +38,10 @@ for (; nomorAngkot <= jumlahAngkot; nomorAngkot++) {
 /* 
 Catatan:
 tidak perlu define lagi karena nomor angkot sudah menjadi 7 setelah selesai loop while */
+let i = 1;
+for (; i <= 10; i++) {
+  i = i++;
+  console.log(i);
+}
+
+console.log(i);
