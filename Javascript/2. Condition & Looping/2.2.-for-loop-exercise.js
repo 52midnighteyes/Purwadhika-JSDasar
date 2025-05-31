@@ -21,8 +21,6 @@ Ketentuan:
 - Output dicetak dengan console.log
 */
 
-const n = 5; // ubah nilai n untuk menguji dengan jumlah baris berbeda
-
 // Kerjakan di bawah ini:
 
 let stars = "";
@@ -34,3 +32,8 @@ for (let i = 1; i <= 5; i++) {
 }
 
 console.log(stars);
+
+
+
+
+

@@ -1,2 +1,111 @@
-ada beberapa status:
-1. untracked (U) = file tersebut belum ditrack oleh git
+// =======================
+// STATUS FILE DI GIT
+// =======================
+
+/*
+Git punya sistem untuk melacak status dari setiap file dalam proyek kita.
+Ada 3 status utama yang penting banget buat dipahami:
+
+1. Untracked (U)
+   - Artinya: File ini belum pernah dikenali Git sebelumnya.
+   - Git nggak tahu soal keberadaan file ini sampai kita bilang "Hei, tolong lacak file ini!"
+   - Cara Git tahu? Pakai perintah:
+     git add <nama_file>
+   - Contoh kasus: kamu bikin file baru `script.js`, tapi belum kamu add.
+     Maka statusnya adalah untracked.
+
+2. Added (A)
+   - Artinya: File sudah ditambahkan ke dalam staging area.
+   - Git sudah tahu file ini dan siap dimasukkan ke commit berikutnya.
+   - Dicapai setelah menjalankan:
+     git add <nama_file>
+   - Ini seperti bilang ke Git: “Saya siap menyimpan snapshot file ini.”
+
+3. Modified (M)
+   - Artinya: File yang sudah dikenal Git, telah mengalami perubahan.
+   - Bisa terjadi setelah file masuk ke staging/commit sebelumnya, lalu kamu ubah lagi.
+   - Supaya versi terbarunya bisa ikut ke commit berikutnya, kamu **harus** jalankan `git add` lagi.
+   - Kalau tidak, Git akan anggap kamu belum siap menyimpan versi barunya.
+*/
+
+// =======================
+// STATE DALAM GIT
+// =======================
+
+/*
+Git punya 3 tempat utama yang merepresentasikan siklus hidup file:
+
+1. Working Directory (Working Tree)
+   - Ini folder kerja kamu sehari-hari.
+   - Tempat kamu nulis, ngoding, hapus file, dll.
+   - Git akan mendeteksi file mana yang baru, berubah, atau dihapus.
+   - Tapi... Git nggak otomatis menyimpan setiap perubahan.
+     Harus kamu kasih tahu lewat perintah `git add`.
+
+2. Staging Area (Index)
+   - Ini tempat *sementara* sebelum file benar-benar disimpan permanen.
+   - File yang kamu `git add` akan masuk ke staging.
+   - Di sini Git tahu: "Oke, ini file yang siap kamu commit."
+   - Kamu bisa memilih file mana yang masuk ke commit, jadi lebih fleksibel.
+
+3. Repository (Local Repo)
+   - Ini tempat penyimpanan permanen di komputermu.
+   - Setelah kamu `git commit`, semua perubahan yang sudah di-*stage* akan disimpan di sini.
+   - Git akan mengingat snapshot file pada waktu commit itu dilakukan.
+*/
+
+// =======================
+// ALUR KERJA DASAR GIT
+// =======================
+
+/*
+Alur dasarnya seperti ini:
+
+1. Kamu mengedit file
+   - Lokasinya: Working Directory
+   - Misal kamu ubah `index.js`
+
+2. Tambahkan perubahan ke staging area:
+   - Perintah: git add index.js
+   - Artinya: “Git, tolong siapin file ini buat saya commit nanti.”
+
+3. Commit perubahan:
+   - Perintah: git commit -m "Menambahkan fitur login"
+   - Artinya: “Git, tolong simpan snapshot dari file ini sekarang.”
+
+4. Push ke remote repository:
+   - Perintah: git push origin <nama_branch>
+   - Misal: git push origin main
+   - Artinya: “Git, tolong kirim commit saya ke server (misalnya GitHub).”
+
+// Jadi urutannya:
+   Working Directory → Staging Area → Local Repository → Remote Repository
+*/
+
+// =======================
+// ILUSTRASI CEPAT
+// =======================
+
+/*
+Misal kamu bikin file baru: `login.js`
+
+1. File muncul sebagai UNTRACKED:
+   - git status → akan tampil: login.js (untracked)
+
+2. Kamu ingin file ini disimpan di commit berikutnya → jalankan:
+   git add login.js
+
+3. Sekarang statusnya: ADDED (staged)
+   - git status → tampil: login.js (staged)
+
+4. Kamu commit:
+   git commit -m "menambahkan fitur login"
+
+5. Sekarang file sudah tersimpan di local repository.
+
+6. Kamu push ke GitHub:
+   git push origin main
+
+7. File sudah tersimpan di remote repository juga.
+*/
+
