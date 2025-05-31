@@ -69,9 +69,10 @@ let diameterLingkaran;
 console.log(typeof pi);
 
 const rValidation = typeof jariJari === "number";
-const piValidation = pi.valueOf() === Math.PI.valueOf();
+const piValidation = pi === Math.PI
 
 console.log(piValidation);
+
 // diameter lingkaran
 if (!rValidation) {
   console.log("Jari-jari harus berupa angka!");
