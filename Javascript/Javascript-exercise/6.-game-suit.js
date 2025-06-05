@@ -44,6 +44,9 @@ for (i = 1; i <= roundToPlay; i++) {
 
   if (userString === computerString) {
     console.log(`ronde ke-${i} seri, sehingga harus diulang`);
+    console.log(
+      `skor sementara: user = ${userScore} vs computer ${computerScore}`
+    );
     i--;
     continue;
   } else if (
@@ -55,10 +58,16 @@ for (i = 1; i <= roundToPlay; i++) {
     console.log(
       `ronde ke-${i} dimenangkan oleh user dengan mengeluarkan ${userString} dan computer mengeluarkan ${computerString}`
     );
+    console.log(
+      `skor sementara: user = ${userScore} vs computer ${computerScore}`
+    );
   } else {
     computerScore++;
     console.log(
       `ronde ke-${i} dimenangkan oleh computer dengan mengeluarkan ${computerString} dan user mengeluarkan ${userString}`
+    );
+    console.log(
+      `skor sementara: user = ${userScore} vs computer ${computerScore}`
     );
   }
 }

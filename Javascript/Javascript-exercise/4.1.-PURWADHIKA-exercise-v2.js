@@ -69,7 +69,7 @@ let diameterLingkaran;
 console.log(typeof pi);
 
 const rValidation = typeof jariJari === "number";
-const piValidation = pi === Math.PI
+const piValidation = pi === Math.PI;
 
 console.log(piValidation);
 
